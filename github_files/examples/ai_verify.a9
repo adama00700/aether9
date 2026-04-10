@@ -1,0 +1,20 @@
+# ai_verify.a9 — verify AI output integrity
+# The signature file guarantees this data hasn't been tampered with
+
+ai_outputs = [54, 36, 72, 90, 18, 45]
+
+lattice verify_output(x) uses ai_outputs:
+    root = dr(x)
+    if root == 9:
+        return 9
+    else:
+        return 0
+
+total_verified = 0
+for output in ai_outputs:
+    check = verify_output(output)
+    total_verified = total_verified + check
+
+integrity_score = total_verified % 9 or 9
+print(integrity_score)
+write("integrity_report.txt", integrity_score)

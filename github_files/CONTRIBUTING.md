@@ -3,7 +3,7 @@
 ## Setup
 
 ```bash
-git clone https://github.com/your-username/aether9
+git clone https://github.com/adama00700/aether9
 cd aether9
 pip install -e .
 ```

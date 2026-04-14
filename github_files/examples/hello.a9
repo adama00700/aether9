@@ -1,0 +1,8 @@
+# hello.a9 — minimal Aether-9 program
+data = [9, 18, 27, 36, 45, 54]
+
+lattice greet(x) uses data:
+    return (x * 9) % 9 or 9
+
+result = greet(9)
+print(result)

@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+*.py         # compiled output — don't commit generated files
+*.a9s        # signature files — generated per-environment

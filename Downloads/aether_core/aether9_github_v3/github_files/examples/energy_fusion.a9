@@ -1,0 +1,21 @@
+# energy_fusion.a9 — multi-lattice pipeline
+source_alpha = [54, 36, 72, 90, 18, 45]
+source_beta  = [27, 63, 81, 18, 45, 36]
+
+lattice normalize(x) uses source_alpha:
+    return (x * 9) % 9 or 9
+
+lattice fuse(a, b) uses source_alpha:
+    n1 = normalize(a)
+    n2 = normalize(b)
+    return (n1 + n2) % 9 or 9
+
+lattice mass_balance(a, b) uses source_beta:
+    return (a * b) % 9 or 9
+
+r1 = fuse(54, 36)
+r2 = mass_balance(27, 63)
+
+print(r1)
+print(r2)
+write("fusion_result.txt", r1)

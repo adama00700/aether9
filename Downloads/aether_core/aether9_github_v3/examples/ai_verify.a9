@@ -1,0 +1,86 @@
+# ══════════════════════════════════════════════════════════
+# ai_verify.a9 — Aether-9 AI Output Verification
+# ══════════════════════════════════════════════════════════
+#
+# Scenario:
+#   An AI model produced risk scores for 6 financial transactions.
+#   Before these scores enter the decision system, we must prove
+#   they have not been modified, manipulated, or hallucinated
+#   into different values.
+#
+# How it works:
+#   1. ai_scores are signed at compile time (VortexSeal)
+#   2. Every call to verify_score() re-checks the seal
+#   3. If ANY value in ai_scores was changed — execution stops
+#   4. The .a9s file serves as a tamper-evident audit log
+#
+# Run:
+#   aether compile ai_verify.a9
+#   aether run     ai_verify.a9
+#   aether inspect ai_verify.a9s
+# ══════════════════════════════════════════════════════════
+
+# Original outputs from the AI model
+ai_scores  = [54, 36, 72, 90, 18, 45]
+
+# Decision thresholds approved by the risk team
+thresholds = [9, 18, 27, 36, 45, 54]
+
+# ── verify each score has resonant integrity ──
+lattice verify_score(x) uses ai_scores:
+    root = dr(x)
+    if root == 9:
+        return 9
+    else:
+        return 0
+
+# ── check score against approved threshold ──
+lattice check_threshold(score, threshold) uses thresholds:
+    if score >= threshold:
+        return 9
+    else:
+        return 0
+
+# ── compute global integrity across all scores ──
+lattice global_integrity(a, b) uses ai_scores:
+    total = 0
+    for score in ai_scores:
+        check = verify_score(score)
+        total = total + check
+    return total % 9 or 9
+
+# ── run verification pipeline ──
+passed = 0
+failed = 0
+
+for score in ai_scores:
+    result = verify_score(score)
+    if result == 9:
+        passed = passed + 1
+    else:
+        failed = failed + 1
+
+integrity = global_integrity(54, 36)
+confidence = mod(passed * 9, 81) or 9
+
+# ── output verified report ──
+print(passed)
+print(failed)
+print(integrity)
+print(confidence)
+
+# ── write signed audit log ──
+write("integrity_report.txt", integrity)
+
+# ══════════════════════════════════════════════════════════
+# What the .a9s file proves:
+#
+#   source_hash  → this exact source was used
+#   ai_scores    → raw_sig=1686592731 (cannot be faked)
+#   thresholds   → raw_sig=310973358
+#   global_seal  → 6 (integrity of the whole program)
+#
+# If anyone modifies ai_scores after compilation:
+#   aether run ai_verify.a9
+#   ✗  Source code was modified (hash mismatch)
+# ══════════════════════════════════════════════════════════

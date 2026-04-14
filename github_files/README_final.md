@@ -266,7 +266,10 @@ See [`examples/`](examples/):
 ---
 
 ## License
+License Notice
 
+Aether-9 is provided for evaluation and research review only.
+Commercial use, integration into products or systems, redistribution, or production deployment is prohibited without prior written permission from Ahmed Harb Akeely.
 MIT — see [LICENSE](LICENSE)
 
 ---

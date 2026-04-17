@@ -1,92 +1,79 @@
 # Aether-9
 
-**A VM-based programming language and execution framework for verifiable, tamper-aware, policy-controlled execution.**
+**A VM-based programming language and execution framework for verifiable, tamper-aware, integration-ready workflows.**
 
-Aether-9 combines a compact source language, a bytecode compiler, portable `.a9b` artifacts, verification sidecars, a stack-based virtual machine, sandbox-aware execution, and developer tooling for export, inspection, disassembly, and runtime execution.
+Aether-9 turns source programs into inspectable bytecode artifacts that can be exported, verified, disassembled, and executed through the Aether VM.
 
-This repository is synchronized to the **3.1.1 stabilization release**.
-
----
-
-## Why Aether-9
-
-Most language toolchains stop at parsing, compilation, and runtime execution.
-Aether-9 adds a different priority stack:
-
-- explicit execution artifacts
-- verification-aware workflow
-- stack-based dedicated VM execution
-- policy-aware runtime controls
-- public-safe diagnostics and reviewability
-
-This makes Aether-9 especially relevant for:
-
-- security-sensitive automation
-- verifiable execution pipelines
-- AI and agent-adjacent runtime control
-- audit-friendly internal tooling
-- research into execution integrity and controlled runtimes
-
----
-
-## What is included in 3.1.1
-
-### Runtime stabilization
-- richer VM diagnostics
-- structured runtime error categories
-- frame, opcode, stack-tail, and trace context
-- more usable verbose inspection and disassembly output
-
-### Examples pack
-- learning examples
-- artifact/runtime examples
-- positioning examples
-- policy example for controlled file write/read flow
-
-### Developer docs pack
-- getting started guide
-- language reference
-- CLI reference
-- artifact format guide
-- VM architecture notes
-- security model notes
-- examples guide
-- runtime diagnostics notes
-
-### Validation package
-- benchmark methodology
-- benchmark summary
-- scenario matrix
-- integration review notes
-- reproducible validation runner and result files
-
----
-
-## Installation
-
-From a local release wheel:
+Current release: **v3.2.0**
 
 ```bash
-pip install ./aether9-3.1.1-py3-none-any.whl
+pip install aether9==3.2.0
 ```
 
-From PyPI after publication of the 3.1.1 release:
+---
+
+## What is Aether-9?
+
+Aether-9 is a compact language + artifact pipeline + VM runtime designed around execution integrity.
+
+Public workflow:
+
+```text
+source.a9
+  -> lexer / parser / AST
+  -> bytecode compiler
+  -> .a9b artifact
+  -> inspect / verify / disasm
+  -> Aether VM execution
+```
+
+Aether-9 is useful where execution needs to be inspectable, packaged into artifacts, validated through structured metadata, callable from automation, and executed through a dedicated VM path.
+
+---
+
+## What's new in v3.2.0
+
+Aether-9 v3.2.0 is an **integration-ready platform release**.
+
+Highlights:
+
+- Python Integration API via `aether9.api`
+- machine-readable CLI output through `--json`
+- artifact contract v2: `aether9.artifact.v2`
+- binary and JSON artifact support
+- improved artifact metadata reporting
+- runtime diagnostics with structured error context
+- integrator docs and examples
+- validation v2 package and evidence outputs
+- RC2 fix included for JSON artifact metadata reporting in VM JSON output
+
+---
+
+## Install
 
 ```bash
-pip install aether9==3.1.1
+pip install aether9==3.2.0
 ```
 
 Check the installed version:
 
 ```bash
-aether --version
+python -m aether9.cli --version
+python -c "import aether9; print(aether9.__version__)"
+```
+
+Expected:
+
+```text
+aether 3.2.0
+3.2.0
 ```
 
 ---
 
 ## Quick start
 
-Create a file named `program.a9`:
+Create `hello.a9`:
 
 ```aether
 data = [54, 36, 72]
@@ -101,151 +88,146 @@ print(result)
 Export a binary artifact:
 
 ```bash
-aether export program.a9 --format binary
+python -m aether9.cli export hello.a9 --format binary --json
 ```
 
 Inspect it:
 
 ```bash
-aether inspect program.a9b -v
+python -m aether9.cli inspect hello.a9b --json
 ```
 
 Disassemble it:
 
 ```bash
-aether disasm program.a9b -v
+python -m aether9.cli disasm hello.a9b --json
 ```
 
-Run it through the Aether VM:
+Run it through the VM:
 
 ```bash
-aether vm program.a9b -v
+python -m aether9.cli vm hello.a9b --json
+```
+
+Expected VM output includes:
+
+```json
+{
+  "success": true,
+  "stdout": "9\n"
+}
 ```
 
 ---
 
-## Core workflow
+## Python Integration API
+
+```python
+from aether9.api import export_file, inspect_path, verify_file, run_file
+
+exp = export_file("hello.a9", format="binary", force=True)
+ins = inspect_path("hello.a9b")
+ver = verify_file("hello.a9")
+run = run_file("hello.a9b")
+
+print(exp.to_dict())
+print(ins.to_dict())
+print(ver.to_dict())
+print(run.to_dict())
+```
+
+The API returns structured result objects with `.to_dict()` for automation, CI, and service workflows.
+
+---
+
+## CLI commands
+
+```bash
+python -m aether9.cli export hello.a9 --format binary --json
+python -m aether9.cli inspect hello.a9b --json
+python -m aether9.cli disasm hello.a9b --json
+python -m aether9.cli verify hello.a9 --json
+python -m aether9.cli vm hello.a9b --json
+```
+
+`--json` makes outputs machine-readable and suitable for integration pipelines.
+
+---
+
+## Artifact contract v2
+
+Aether-9 v3.2.0 uses:
 
 ```text
-source.a9
-    -> Lexer / Parser / AST
-    -> Bytecode compiler
-    -> .a9b artifact
-    -> inspect / disasm / verify
-    -> Aether VM
+aether9.artifact.v2
 ```
 
-Aether-9 is therefore more than a syntax layer. It is a language-plus-runtime system built around explicit execution artifacts and controlled runtime behavior.
+Artifact metadata includes contract, schema version, artifact kind, container type, version, format, counts, names, sections, integrity metadata, opcode histogram, and function summaries.
 
----
+Supported containers:
 
-## Repository map
+- binary `.a9b`
+- JSON `.a9b`
 
-### Main code
-- `aether9/` — source package
-- `aether9/compiler.py` — lexer, parser, AST, compiler path
-- `aether9/vm.py` — bytecode container and VM runtime
-- `aether9/sandbox.py` — sandbox and execution policy behavior
-- `aether9/cli.py` — command-line entry points
+Binary artifacts use the public magic marker:
 
-### Documentation
-- `docs/README.md`
-- `docs/getting-started.md`
-- `docs/language-reference.md`
-- `docs/cli-reference.md`
-- `docs/artifact-format.md`
-- `docs/vm-architecture.md`
-- `docs/security-model.md`
-- `docs/examples.md`
-- `docs/runtime-diagnostics.md`
-
-### Examples
-- `examples/README.md`
-- `examples/hello.a9`
-- `examples/control_flow.a9`
-- `examples/stdlib_demo.a9`
-- `examples/export_binary_demo.a9`
-- `examples/inspect_demo.a9`
-- `examples/vm_execution_demo.a9`
-- `examples/ai_verification.a9`
-- `examples/tamper_detection_demo.a9`
-- `examples/write_read_demo.a9`
-
-### Validation
-- `validation/README.md`
-- `validation/benchmark-methodology.md`
-- `validation/benchmark-summary.md`
-- `validation/scenario-matrix.md`
-- `validation/integration-review.md`
-- `validation/validation-checklist.md`
-- `validation/tools/run_validation.py`
-- `validation/results/`
-
-### Release tracking
-- `CHANGELOG.md`
-- `RELEASE_NOTES_3_1_1.md`
-
----
-
-## Selected validation snapshot
-
-Current 3.1.1 validation artifacts include the following public snapshot:
-
-- `compile_to_bytecode` average: **0.788 ms**
-- `inspect_binary_artifact` average: **0.6522 ms**
-- `load_binary_artifact` average: **0.7067 ms**
-- `vm_run_from_binary` average: **1.0217 ms**
-- `inspect_demo.a9` JSON artifact size: **3086 bytes**
-- `inspect_demo.a9` binary artifact size: **1639 bytes**
-
-The repository also contains validation scenarios covering export, inspect, VM execution, tamper detection, verbose diagnostics, and sandbox blocking.
-
----
-
-## CLI surface
-
-Primary public commands:
-
-```bash
-aether --version
-aether export <file.a9> --format binary
-aether export <file.a9> --format json
-aether inspect <file.a9b> -v
-aether disasm <file.a9b> -v
-aether vm <file.a9b> -v
+```text
+A9B9
 ```
 
 ---
 
-## Security note
+## Runtime diagnostics
 
-This repository documents the **public** Aether-9 model only.
-It intentionally does **not** publish:
-
-- private signing keys
-- undisclosed internal secrets
-- sensitive implementation material that should not be exposed publicly
-
-The goal is to make the system understandable and reviewable without disclosing material that would weaken its security posture.
+The VM reports structured runtime failures with context such as error type, frame, instruction pointer, opcode, argument, call stack, and recent trace.
 
 ---
 
-## 3.1.1 repo sync priorities
+## Documentation
 
-This repository state is intended to reflect a project that is now built around three parallel themes:
+See:
 
-- **Core technology** — stable runtime, artifacts, VM, CLI, sandbox
-- **Validation package** — measurable scenarios, benchmark notes, result files
-- **Integration-ready platform** — examples, docs, inspection workflow, release notes
-
-The next logical step after this sync is planning the **3.2.0** cycle on top of a clean public repository state.
+- [`docs/getting-started.md`](docs/getting-started.md)
+- [`docs/cli-reference.md`](docs/cli-reference.md)
+- [`docs/integration-api.md`](docs/integration-api.md)
+- [`docs/artifact-format.md`](docs/artifact-format.md)
+- [`docs/vm-architecture.md`](docs/vm-architecture.md)
+- [`docs/runtime-diagnostics.md`](docs/runtime-diagnostics.md)
+- [`docs/integrator-overview.md`](docs/integrator-overview.md)
+- [`docs/embedding-cookbook.md`](docs/embedding-cookbook.md)
+- [`docs/automation-patterns.md`](docs/automation-patterns.md)
+- [`docs/security-model.md`](docs/security-model.md)
 
 ---
 
-## License
+## Examples
 
-See `LICENSE` in the repository root.
+See [`examples/`](examples/).
+
+Examples cover basic language usage, control flow, standard library usage, binary export, artifact inspection, VM execution, Python API integration, embedded runner usage, and CI-style validation usage.
 
 ---
 
-**Built by Ahmed Harb Akeely**
+## Validation
+
+See [`validation/`](validation/).
+
+v3.2.0 includes validation v2 materials covering Python API flows, machine-readable CLI flows, artifact contract v2, binary and JSON artifact paths, and failure diagnostics scenarios.
+
+---
+
+## Public security note
+
+Aether-9 includes public integrity, artifact, verification, and sandbox-oriented workflows.
+
+Sensitive signing secrets, private keys, and undisclosed implementation details are intentionally not included in the public repository.
+
+Aether-9 is experimental software and should be independently reviewed before use in high-risk production environments.
+
+---
+
+## Release notes
+
+- [`RELEASE_NOTES_3_2_0.md`](RELEASE_NOTES_3_2_0.md)
+- [`FINAL_READINESS_REPORT_3_2_0.md`](FINAL_READINESS_REPORT_3_2_0.md)
+- [`CHANGELOG.md`](CHANGELOG.md)

@@ -1,0 +1,4 @@
+include README.md
+include LICENSE
+include RELEASE_NOTES_v3.3.0.md
+recursive-include tests *.py

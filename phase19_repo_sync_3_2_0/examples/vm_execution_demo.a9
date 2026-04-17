@@ -1,0 +1,10 @@
+data = [9, 18]
+
+lattice step1(x) uses data:
+    return (x + 9) % 9 or 9
+
+lattice step2(x) uses data:
+    return step1(x) % 9 or 9
+
+result = step2(18)
+print(result)

@@ -1,0 +1,16 @@
+{
+  "validation_version": "2",
+  "generated_files": [
+    "hello.v2.bin.a9b",
+    "hello.v2.a9s",
+    "hello.v2.json.a9b",
+    "tampered_source.a9",
+    "bench.bin.a9b",
+    "bench.a9s",
+    "test.bin.a9b",
+    "test.a9s",
+    "validation_v2_summary.json",
+    "validation_v2_scenarios.json",
+    "validation_v2_benchmark_runs.csv"
+  ]
+}

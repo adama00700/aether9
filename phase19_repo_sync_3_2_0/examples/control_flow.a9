@@ -1,0 +1,18 @@
+data = [9, 18, 27]
+
+lattice normalize(x) uses data:
+    if x == 0:
+        return 9
+    else:
+        return x % 9 or 9
+
+total = 0
+for item in data:
+    total = total + normalize(item)
+
+counter = 0
+while counter < 3:
+    counter = counter + 1
+
+print(total)
+print(counter)

@@ -1,0 +1,12 @@
+feature,status,priority,phase,notes
+integration_api,planned,high,2,Primary value driver for v3.2.0
+inspect_json_output,planned,high,3,Needed for automation and pipelines
+verify_json_output,planned,high,3,Needed for machine-readable validation
+vm_json_output,planned,high,3,Needed for structured execution results
+artifact_metadata_cleanup,planned,high,4,Normalize inspection and validation schema
+embedding_examples,planned,medium,5,Show Aether as a component
+automation_examples,planned,medium,5,Show CI/orchestrator workflows
+validation_v2,planned,high,6,Evidence for integration-readiness
+float_support,deferred,low,-,Out of scope for 3.2.0
+map_support,deferred,low,-,Out of scope for 3.2.0
+jit,deferred,low,-,Out of scope for 3.2.0

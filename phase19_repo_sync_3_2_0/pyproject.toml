@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aether9"
+version = "3.2.0"
+description = "Aether-9: integration-ready VM execution with structured APIs, JSON CLI output, artifact contracts, and validation workflows"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+authors = [
+  {name = "Ahmed Harb Akeely"}
+]
+keywords = ["aether9", "dsl", "bytecode", "vm", "artifact", "verification", "runtime-diagnostics"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Operating System :: OS Independent"
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+aether = "aether9.cli:main"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["aether9*"]

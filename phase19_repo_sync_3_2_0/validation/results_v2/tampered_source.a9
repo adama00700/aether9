@@ -1,0 +1,7 @@
+data = [55, 36, 72]
+
+lattice normalize(x) uses data:
+    return (x * 9) % 9 or 9
+
+result = normalize(54)
+print(result)

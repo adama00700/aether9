@@ -1,0 +1,7 @@
+data = [54, 36, 72]
+
+lattice verify(x) uses data:
+    return (x + 9) % 9 or 9
+
+result = verify(54)
+print(result)

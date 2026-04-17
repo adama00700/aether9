@@ -1,0 +1,3 @@
+write("report.txt", 9)
+loaded = read("report.txt")
+print(loaded)

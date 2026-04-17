@@ -1,0 +1,48 @@
+{
+  "release": "3.2.0",
+  "theme": "Integration-Ready Platform",
+  "phases": [
+    {
+      "id": 1,
+      "name": "planning_pack",
+      "goal": "freeze scope and boundaries"
+    },
+    {
+      "id": 2,
+      "name": "integration_api_pack",
+      "goal": "programmatic export/inspect/verify/run"
+    },
+    {
+      "id": 3,
+      "name": "machine_readable_cli_pack",
+      "goal": "structured CLI output"
+    },
+    {
+      "id": 4,
+      "name": "artifact_contract_v2_cleanup",
+      "goal": "metadata and validation normalization"
+    },
+    {
+      "id": 5,
+      "name": "integrator_docs_examples_pack",
+      "goal": "embedding and automation guidance"
+    },
+    {
+      "id": 6,
+      "name": "validation_v2_pack",
+      "goal": "integration-focused validation evidence"
+    },
+    {
+      "id": 7,
+      "name": "beta_rc_release",
+      "goal": "freeze, verify, and package"
+    }
+  ],
+  "non_goals": [
+    "float support",
+    "map/dict support",
+    "major syntax expansion",
+    "optimizer or JIT work",
+    "broad SCP coupling in the public package"
+  ]
+}

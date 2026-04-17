@@ -1,0 +1,8 @@
+label,repeats,mean_ms,min_ms,max_ms
+api_export_binary,3,3.9546,3.5526,4.5009
+api_inspect_binary,3,1.5314,1.4075,1.7216
+api_verify_file,3,1.9009,1.5472,2.2507
+api_run_binary,3,1.4418,1.0426,1.7057
+cli_inspect_json,3,4420.7421,4330.2956,4551.0519
+cli_verify_json,3,4456.4185,4363.0726,4540.8425
+cli_vm_json,3,4436.3848,4378.8527,4525.9401

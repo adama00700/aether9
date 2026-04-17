@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Build artifacts
+build/
+dist/
+*.whl
+*.tar.gz
+*.zip
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Aether generated artifacts
+*.a9b
+*.a9s
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local secrets
+.env
+*.pem
+*.key
+API token.txt
+.pypirc

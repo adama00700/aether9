@@ -1,0 +1,10 @@
+data = [9, 18, 27]
+
+lattice total(x) uses data:
+    acc = 0
+    for item in data:
+        acc = acc + item
+    return acc % 9 or 9
+
+result = total(9)
+print(result)

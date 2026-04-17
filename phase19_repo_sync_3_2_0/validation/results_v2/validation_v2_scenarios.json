@@ -1,0 +1,1076 @@
+[
+  {
+    "name": "api_export_binary",
+    "kind": "api",
+    "success": true,
+    "details": {
+      "success": true,
+      "error_type": null,
+      "error_message": null,
+      "source_name": "hello.a9",
+      "artifact_path": "/mnt/data/phase15_validation_v2_pack/validation/results_v2/hello.v2.bin.a9b",
+      "artifact_format": "binary",
+      "signature_path": "/mnt/data/phase15_validation_v2_pack/validation/results_v2/hello.v2.a9s",
+      "instruction_count": 10,
+      "functions": [
+        "verify"
+      ],
+      "arrays": [
+        "data"
+      ],
+      "contract": "aether9.artifact.v2",
+      "artifact_version": "2.0-binary"
+    }
+  },
+  {
+    "name": "api_export_json",
+    "kind": "api",
+    "success": true,
+    "details": {
+      "success": true,
+      "error_type": null,
+      "error_message": null,
+      "source_name": "hello.a9",
+      "artifact_path": "/mnt/data/phase15_validation_v2_pack/validation/results_v2/hello.v2.json.a9b",
+      "artifact_format": "json",
+      "signature_path": null,
+      "instruction_count": 10,
+      "functions": [
+        "verify"
+      ],
+      "arrays": [
+        "data"
+      ],
+      "contract": "aether9.artifact.v2",
+      "artifact_version": "2.0-json"
+    }
+  },
+  {
+    "name": "api_inspect_binary",
+    "kind": "api",
+    "success": true,
+    "details": {
+      "success": true,
+      "error_type": null,
+      "error_message": null,
+      "path": "/mnt/data/phase15_validation_v2_pack/examples/hello.a9b",
+      "kind": "artifact",
+      "metadata": {
+        "contract": "aether9.artifact.v2",
+        "schema_version": 2,
+        "artifact_kind": "bytecode",
+        "version": "2.0-binary",
+        "format": "aether9-bytecode-binary",
+        "container": {
+          "type": "binary",
+          "magic": "A9B9",
+          "legacy_versions_supported": [
+            "1.0-binary"
+          ]
+        },
+        "compatibility": {
+          "legacy_contracts_supported": [
+            "aether9.artifact.v1"
+          ],
+          "current_contract": "aether9.artifact.v2"
+        },
+        "sections": [
+          {
+            "name": "manifest",
+            "section_id": 1,
+            "codec": "json",
+            "offset": 308,
+            "length": 1644,
+            "sha256_prefix": "9946e4c1d8172337"
+          },
+          {
+            "name": "instructions",
+            "section_id": 2,
+            "codec": "a9bin",
+            "offset": 1952,
+            "length": 169,
+            "sha256_prefix": "7d4be0a62d01bff2"
+          },
+          {
+            "name": "functions",
+            "section_id": 3,
+            "codec": "a9bin",
+            "offset": 2121,
+            "length": 126,
+            "sha256_prefix": "7186c7a98a43c549"
+          },
+          {
+            "name": "func_seals",
+            "section_id": 4,
+            "codec": "a9bin",
+            "offset": 2247,
+            "length": 57,
+            "sha256_prefix": "57b1d7cdf6bf4dba"
+          },
+          {
+            "name": "registry",
+            "section_id": 5,
+            "codec": "a9bin",
+            "offset": 2304,
+            "length": 91,
+            "sha256_prefix": "f67b5457c47764fe"
+          }
+        ],
+        "counts": {
+          "instructions": 10,
+          "functions": 1,
+          "arrays": 1,
+          "sealed_functions": 1
+        },
+        "names": {
+          "functions": [
+            "verify"
+          ],
+          "arrays": [
+            "data"
+          ]
+        },
+        "integrity": {
+          "sealed_function_count": 1,
+          "opcode_histogram": {
+            "BINARY_OP": 3,
+            "CALL_FUNC": 1,
+            "HALT": 1,
+            "LOAD_CONST": 5,
+            "LOAD_NAME": 2,
+            "MAKE_FUNC": 1,
+            "POP": 1,
+            "PRINT": 1,
+            "RETURN": 1,
+            "STORE_NAME": 3
+          },
+          "function_summaries": {
+            "verify": {
+              "instruction_count": 9,
+              "sealed": true,
+              "params": [
+                "x"
+              ]
+            }
+          },
+          "container_checksum_prefix": "a4204ee85b4f93a7",
+          "table_checksum_prefix": "a4204ee85b4f93a7"
+        },
+        "instruction_count": 10,
+        "functions": [
+          "verify"
+        ],
+        "arrays": [
+          "data"
+        ],
+        "opcodes": [
+          "LOAD_CONST",
+          "LOAD_NAME",
+          "STORE_NAME",
+          "POP",
+          "BINARY_OP",
+          "COMPARE",
+          "UNARY_NEG",
+          "JUMP",
+          "JUMP_IF_FALSE",
+          "JUMP_BACK",
+          "FOR_START",
+          "FOR_NEXT",
+          "FOR_END",
+          "MAKE_FUNC",
+          "CALL_FUNC",
+          "RETURN",
+          "PRINT",
+          "WRITE",
+          "READ",
+          "CALL_BUILTIN",
+          "HALT"
+        ],
+        "opcode_histogram": {
+          "BINARY_OP": 3,
+          "CALL_FUNC": 1,
+          "HALT": 1,
+          "LOAD_CONST": 5,
+          "LOAD_NAME": 2,
+          "MAKE_FUNC": 1,
+          "POP": 1,
+          "PRINT": 1,
+          "RETURN": 1,
+          "STORE_NAME": 3
+        },
+        "function_summaries": {
+          "verify": {
+            "instruction_count": 9,
+            "sealed": true,
+            "params": [
+              "x"
+            ]
+          }
+        },
+        "sealed_function_count": 1,
+        "byte_size": 2395,
+        "binary_header": {
+          "magic": "A9B9",
+          "major": 1,
+          "minor": 0,
+          "flags": 0,
+          "section_count": 5,
+          "container_checksum_prefix": "a4204ee85b4f93a7"
+        }
+      }
+    }
+  },
+  {
+    "name": "api_verify_signature",
+    "kind": "api",
+    "success": true,
+    "details": {
+      "success": true,
+      "error_type": null,
+      "error_message": null,
+      "source_path": "/mnt/data/phase15_validation_v2_pack/examples/hello.a9",
+      "signature_path": "/mnt/data/phase15_validation_v2_pack/examples/hello.a9s",
+      "ok": true,
+      "message": "OK",
+      "arrays": [
+        "data"
+      ],
+      "source_hash": "08826f85ffef4b61e843b83110cc293e80e346c0b438eeb19273e68f8d100b95",
+      "global_mac_prefix": "3f8d1b689a705981"
+    }
+  },
+  {
+    "name": "api_vm_run_binary",
+    "kind": "api",
+    "success": true,
+    "details": {
+      "success": true,
+      "error_type": null,
+      "error_message": null,
+      "target_path": "/mnt/data/phase15_validation_v2_pack/examples/hello.a9b",
+      "target_kind": "artifact",
+      "stdout": "9\n",
+      "return_value": null,
+      "artifact_metadata": {
+        "contract": "aether9.artifact.v2",
+        "schema_version": 2,
+        "artifact_kind": "bytecode",
+        "version": "2.0-binary",
+        "format": "aether9-bytecode-binary",
+        "container": {
+          "type": "binary",
+          "magic": "A9B9",
+          "legacy_versions_supported": [
+            "1.0-binary"
+          ]
+        },
+        "compatibility": {
+          "legacy_contracts_supported": [
+            "aether9.artifact.v1"
+          ],
+          "current_contract": "aether9.artifact.v2"
+        },
+        "sections": [
+          {
+            "name": "manifest",
+            "section_id": 1,
+            "codec": "json",
+            "required": true
+          },
+          {
+            "name": "instructions",
+            "section_id": 2,
+            "codec": "a9bin",
+            "required": true
+          },
+          {
+            "name": "functions",
+            "section_id": 3,
+            "codec": "a9bin",
+            "required": true
+          },
+          {
+            "name": "func_seals",
+            "section_id": 4,
+            "codec": "a9bin",
+            "required": true
+          },
+          {
+            "name": "registry",
+            "section_id": 5,
+            "codec": "a9bin",
+            "required": true
+          }
+        ],
+        "counts": {
+          "instructions": 10,
+          "functions": 1,
+          "arrays": 1,
+          "sealed_functions": 1
+        },
+        "names": {
+          "functions": [
+            "verify"
+          ],
+          "arrays": [
+            "data"
+          ]
+        },
+        "integrity": {
+          "sealed_function_count": 1,
+          "opcode_histogram": {
+            "BINARY_OP": 3,
+            "CALL_FUNC": 1,
+            "HALT": 1,
+            "LOAD_CONST": 5,
+            "LOAD_NAME": 2,
+            "MAKE_FUNC": 1,
+            "POP": 1,
+            "PRINT": 1,
+            "RETURN": 1,
+            "STORE_NAME": 3
+          },
+          "function_summaries": {
+            "verify": {
+              "instruction_count": 9,
+              "sealed": true,
+              "params": [
+                "x"
+              ]
+            }
+          }
+        },
+        "instruction_count": 10,
+        "functions": [
+          "verify"
+        ],
+        "arrays": [
+          "data"
+        ],
+        "opcodes": [
+          "LOAD_CONST",
+          "LOAD_NAME",
+          "STORE_NAME",
+          "POP",
+          "BINARY_OP",
+          "COMPARE",
+          "UNARY_NEG",
+          "JUMP",
+          "JUMP_IF_FALSE",
+          "JUMP_BACK",
+          "FOR_START",
+          "FOR_NEXT",
+          "FOR_END",
+          "MAKE_FUNC",
+          "CALL_FUNC",
+          "RETURN",
+          "PRINT",
+          "WRITE",
+          "READ",
+          "CALL_BUILTIN",
+          "HALT"
+        ],
+        "opcode_histogram": {
+          "BINARY_OP": 3,
+          "CALL_FUNC": 1,
+          "HALT": 1,
+          "LOAD_CONST": 5,
+          "LOAD_NAME": 2,
+          "MAKE_FUNC": 1,
+          "POP": 1,
+          "PRINT": 1,
+          "RETURN": 1,
+          "STORE_NAME": 3
+        },
+        "function_summaries": {
+          "verify": {
+            "instruction_count": 9,
+            "sealed": true,
+            "params": [
+              "x"
+            ]
+          }
+        },
+        "sealed_function_count": 1
+      }
+    }
+  },
+  {
+    "name": "api_tamper_detected",
+    "kind": "api",
+    "success": true,
+    "details": {
+      "success": false,
+      "error_type": "SignatureVerificationError",
+      "error_message": "Source code was modified (hash mismatch)",
+      "source_path": "/mnt/data/phase15_validation_v2_pack/validation/results_v2/tampered_source.a9",
+      "signature_path": "/mnt/data/phase15_validation_v2_pack/examples/tamper_detection_demo.a9s",
+      "ok": false,
+      "message": "Source code was modified (hash mismatch)",
+      "arrays": [
+        "data"
+      ],
+      "source_hash": "cc8f83107e32ebbfa233b23ee811ec43b3e428fbc207a335eba448ba10e8fcff",
+      "global_mac_prefix": "5b7e52a3023d08c1"
+    }
+  },
+  {
+    "name": "cli_inspect",
+    "kind": "cli",
+    "success": true,
+    "returncode": 0,
+    "details": {
+      "command": "inspect",
+      "error_message": null,
+      "error_type": null,
+      "kind": "artifact",
+      "metadata": {
+        "arrays": [
+          "data"
+        ],
+        "artifact_kind": "bytecode",
+        "binary_header": {
+          "container_checksum_prefix": "a4204ee85b4f93a7",
+          "flags": 0,
+          "magic": "A9B9",
+          "major": 1,
+          "minor": 0,
+          "section_count": 5
+        },
+        "byte_size": 2395,
+        "compatibility": {
+          "current_contract": "aether9.artifact.v2",
+          "legacy_contracts_supported": [
+            "aether9.artifact.v1"
+          ]
+        },
+        "container": {
+          "legacy_versions_supported": [
+            "1.0-binary"
+          ],
+          "magic": "A9B9",
+          "type": "binary"
+        },
+        "contract": "aether9.artifact.v2",
+        "counts": {
+          "arrays": 1,
+          "functions": 1,
+          "instructions": 10,
+          "sealed_functions": 1
+        },
+        "format": "aether9-bytecode-binary",
+        "function_summaries": {
+          "verify": {
+            "instruction_count": 9,
+            "params": [
+              "x"
+            ],
+            "sealed": true
+          }
+        },
+        "functions": [
+          "verify"
+        ],
+        "instruction_count": 10,
+        "integrity": {
+          "container_checksum_prefix": "a4204ee85b4f93a7",
+          "function_summaries": {
+            "verify": {
+              "instruction_count": 9,
+              "params": [
+                "x"
+              ],
+              "sealed": true
+            }
+          },
+          "opcode_histogram": {
+            "BINARY_OP": 3,
+            "CALL_FUNC": 1,
+            "HALT": 1,
+            "LOAD_CONST": 5,
+            "LOAD_NAME": 2,
+            "MAKE_FUNC": 1,
+            "POP": 1,
+            "PRINT": 1,
+            "RETURN": 1,
+            "STORE_NAME": 3
+          },
+          "sealed_function_count": 1,
+          "table_checksum_prefix": "a4204ee85b4f93a7"
+        },
+        "names": {
+          "arrays": [
+            "data"
+          ],
+          "functions": [
+            "verify"
+          ]
+        },
+        "opcode_histogram": {
+          "BINARY_OP": 3,
+          "CALL_FUNC": 1,
+          "HALT": 1,
+          "LOAD_CONST": 5,
+          "LOAD_NAME": 2,
+          "MAKE_FUNC": 1,
+          "POP": 1,
+          "PRINT": 1,
+          "RETURN": 1,
+          "STORE_NAME": 3
+        },
+        "opcodes": [
+          "LOAD_CONST",
+          "LOAD_NAME",
+          "STORE_NAME",
+          "POP",
+          "BINARY_OP",
+          "COMPARE",
+          "UNARY_NEG",
+          "JUMP",
+          "JUMP_IF_FALSE",
+          "JUMP_BACK",
+          "FOR_START",
+          "FOR_NEXT",
+          "FOR_END",
+          "MAKE_FUNC",
+          "CALL_FUNC",
+          "RETURN",
+          "PRINT",
+          "WRITE",
+          "READ",
+          "CALL_BUILTIN",
+          "HALT"
+        ],
+        "schema_version": 2,
+        "sealed_function_count": 1,
+        "sections": [
+          {
+            "codec": "json",
+            "length": 1644,
+            "name": "manifest",
+            "offset": 308,
+            "section_id": 1,
+            "sha256_prefix": "9946e4c1d8172337"
+          },
+          {
+            "codec": "a9bin",
+            "length": 169,
+            "name": "instructions",
+            "offset": 1952,
+            "section_id": 2,
+            "sha256_prefix": "7d4be0a62d01bff2"
+          },
+          {
+            "codec": "a9bin",
+            "length": 126,
+            "name": "functions",
+            "offset": 2121,
+            "section_id": 3,
+            "sha256_prefix": "7186c7a98a43c549"
+          },
+          {
+            "codec": "a9bin",
+            "length": 57,
+            "name": "func_seals",
+            "offset": 2247,
+            "section_id": 4,
+            "sha256_prefix": "57b1d7cdf6bf4dba"
+          },
+          {
+            "codec": "a9bin",
+            "length": 91,
+            "name": "registry",
+            "offset": 2304,
+            "section_id": 5,
+            "sha256_prefix": "f67b5457c47764fe"
+          }
+        ],
+        "version": "2.0-binary"
+      },
+      "path": "/mnt/data/phase15_validation_v2_pack/examples/hello.a9b",
+      "success": true
+    }
+  },
+  {
+    "name": "cli_verify",
+    "kind": "cli",
+    "success": true,
+    "returncode": 0,
+    "details": {
+      "arrays": [
+        "data"
+      ],
+      "command": "verify",
+      "error_message": null,
+      "error_type": null,
+      "global_mac_prefix": "3f8d1b689a705981",
+      "message": "OK",
+      "ok": true,
+      "signature_path": "/mnt/data/phase15_validation_v2_pack/examples/hello.a9s",
+      "source_hash": "08826f85ffef4b61e843b83110cc293e80e346c0b438eeb19273e68f8d100b95",
+      "source_path": "/mnt/data/phase15_validation_v2_pack/examples/hello.a9",
+      "success": true
+    }
+  },
+  {
+    "name": "cli_vm",
+    "kind": "cli",
+    "success": true,
+    "returncode": 0,
+    "details": {
+      "artifact_metadata": {
+        "arrays": [
+          "data"
+        ],
+        "artifact_kind": "bytecode",
+        "compatibility": {
+          "current_contract": "aether9.artifact.v2",
+          "legacy_contracts_supported": [
+            "aether9.artifact.v1"
+          ]
+        },
+        "container": {
+          "legacy_versions_supported": [
+            "1.0-binary"
+          ],
+          "magic": "A9B9",
+          "type": "binary"
+        },
+        "contract": "aether9.artifact.v2",
+        "counts": {
+          "arrays": 1,
+          "functions": 1,
+          "instructions": 10,
+          "sealed_functions": 1
+        },
+        "format": "aether9-bytecode-binary",
+        "function_summaries": {
+          "verify": {
+            "instruction_count": 9,
+            "params": [
+              "x"
+            ],
+            "sealed": true
+          }
+        },
+        "functions": [
+          "verify"
+        ],
+        "instruction_count": 10,
+        "integrity": {
+          "function_summaries": {
+            "verify": {
+              "instruction_count": 9,
+              "params": [
+                "x"
+              ],
+              "sealed": true
+            }
+          },
+          "opcode_histogram": {
+            "BINARY_OP": 3,
+            "CALL_FUNC": 1,
+            "HALT": 1,
+            "LOAD_CONST": 5,
+            "LOAD_NAME": 2,
+            "MAKE_FUNC": 1,
+            "POP": 1,
+            "PRINT": 1,
+            "RETURN": 1,
+            "STORE_NAME": 3
+          },
+          "sealed_function_count": 1
+        },
+        "names": {
+          "arrays": [
+            "data"
+          ],
+          "functions": [
+            "verify"
+          ]
+        },
+        "opcode_histogram": {
+          "BINARY_OP": 3,
+          "CALL_FUNC": 1,
+          "HALT": 1,
+          "LOAD_CONST": 5,
+          "LOAD_NAME": 2,
+          "MAKE_FUNC": 1,
+          "POP": 1,
+          "PRINT": 1,
+          "RETURN": 1,
+          "STORE_NAME": 3
+        },
+        "opcodes": [
+          "LOAD_CONST",
+          "LOAD_NAME",
+          "STORE_NAME",
+          "POP",
+          "BINARY_OP",
+          "COMPARE",
+          "UNARY_NEG",
+          "JUMP",
+          "JUMP_IF_FALSE",
+          "JUMP_BACK",
+          "FOR_START",
+          "FOR_NEXT",
+          "FOR_END",
+          "MAKE_FUNC",
+          "CALL_FUNC",
+          "RETURN",
+          "PRINT",
+          "WRITE",
+          "READ",
+          "CALL_BUILTIN",
+          "HALT"
+        ],
+        "schema_version": 2,
+        "sealed_function_count": 1,
+        "sections": [
+          {
+            "codec": "json",
+            "name": "manifest",
+            "required": true,
+            "section_id": 1
+          },
+          {
+            "codec": "a9bin",
+            "name": "instructions",
+            "required": true,
+            "section_id": 2
+          },
+          {
+            "codec": "a9bin",
+            "name": "functions",
+            "required": true,
+            "section_id": 3
+          },
+          {
+            "codec": "a9bin",
+            "name": "func_seals",
+            "required": true,
+            "section_id": 4
+          },
+          {
+            "codec": "a9bin",
+            "name": "registry",
+            "required": true,
+            "section_id": 5
+          }
+        ],
+        "version": "2.0-binary"
+      },
+      "command": "vm",
+      "error_message": null,
+      "error_type": null,
+      "return_value": null,
+      "stdout": "9\n",
+      "success": true,
+      "target_kind": "artifact",
+      "target_path": "/mnt/data/phase15_validation_v2_pack/examples/hello.a9b",
+      "verbose": false
+    }
+  },
+  {
+    "name": "cli_disasm",
+    "kind": "cli",
+    "success": true,
+    "returncode": 0,
+    "details": {
+      "artifact_metadata": {
+        "arrays": [
+          "data"
+        ],
+        "artifact_kind": "bytecode",
+        "compatibility": {
+          "current_contract": "aether9.artifact.v2",
+          "legacy_contracts_supported": [
+            "aether9.artifact.v1"
+          ]
+        },
+        "container": {
+          "legacy_versions_supported": [
+            "1.0",
+            "1.1-json"
+          ],
+          "magic": null,
+          "type": "json"
+        },
+        "contract": "aether9.artifact.v2",
+        "counts": {
+          "arrays": 1,
+          "functions": 1,
+          "instructions": 10,
+          "sealed_functions": 1
+        },
+        "format": "aether9-bytecode-json",
+        "function_summaries": {
+          "total": {
+            "instruction_count": 18,
+            "params": [
+              "x"
+            ],
+            "sealed": true
+          }
+        },
+        "functions": [
+          "total"
+        ],
+        "instruction_count": 10,
+        "integrity": {
+          "function_summaries": {
+            "total": {
+              "instruction_count": 18,
+              "params": [
+                "x"
+              ],
+              "sealed": true
+            }
+          },
+          "opcode_histogram": {
+            "BINARY_OP": 3,
+            "CALL_FUNC": 1,
+            "FOR_END": 1,
+            "FOR_NEXT": 1,
+            "FOR_START": 1,
+            "HALT": 1,
+            "JUMP_BACK": 1,
+            "LOAD_CONST": 5,
+            "LOAD_NAME": 5,
+            "MAKE_FUNC": 1,
+            "POP": 1,
+            "PRINT": 1,
+            "RETURN": 1,
+            "STORE_NAME": 5
+          },
+          "sealed_function_count": 1
+        },
+        "names": {
+          "arrays": [
+            "data"
+          ],
+          "functions": [
+            "total"
+          ]
+        },
+        "opcode_histogram": {
+          "BINARY_OP": 3,
+          "CALL_FUNC": 1,
+          "FOR_END": 1,
+          "FOR_NEXT": 1,
+          "FOR_START": 1,
+          "HALT": 1,
+          "JUMP_BACK": 1,
+          "LOAD_CONST": 5,
+          "LOAD_NAME": 5,
+          "MAKE_FUNC": 1,
+          "POP": 1,
+          "PRINT": 1,
+          "RETURN": 1,
+          "STORE_NAME": 5
+        },
+        "opcodes": [
+          "LOAD_CONST",
+          "LOAD_NAME",
+          "STORE_NAME",
+          "POP",
+          "BINARY_OP",
+          "COMPARE",
+          "UNARY_NEG",
+          "JUMP",
+          "JUMP_IF_FALSE",
+          "JUMP_BACK",
+          "FOR_START",
+          "FOR_NEXT",
+          "FOR_END",
+          "MAKE_FUNC",
+          "CALL_FUNC",
+          "RETURN",
+          "PRINT",
+          "WRITE",
+          "READ",
+          "CALL_BUILTIN",
+          "HALT"
+        ],
+        "schema_version": 2,
+        "sealed_function_count": 1,
+        "sections": [
+          {
+            "codec": "json",
+            "name": "json",
+            "required": true,
+            "section_id": 0
+          }
+        ],
+        "version": "2.0-json"
+      },
+      "command": "disasm",
+      "disassembly_text": "=== main ===\n     0  LOAD_CONST         [9, 18, 27]\n     1  STORE_NAME         'data'\n     2  MAKE_FUNC          'total'\n     3  LOAD_CONST         9\n     4  CALL_FUNC          ('total', 1)\n     5  STORE_NAME         'result'\n     6  LOAD_NAME          'result'\n     7  PRINT              1\n     8  POP\n     9  HALT\n\n=== total [sealed] ===\n     0  STORE_NAME         'x'\n     1  LOAD_CONST         0\n     2  STORE_NAME         'acc'\n     3  LOAD_NAME          'data'\n     4  FOR_START          'item'\n     5  FOR_NEXT           11\n     6  LOAD_NAME          'acc'\n     7  LOAD_NAME          'item'\n     8  BINARY_OP          '+'\n     9  STORE_NAME         'acc'\n    10  JUMP_BACK          5\n    11  FOR_END\n    12  LOAD_NAME          'acc'\n    13  LOAD_CONST         9\n    14  BINARY_OP          '%'\n    15  LOAD_CONST         9\n    16  BINARY_OP          'or'\n    17  RETURN",
+      "functions": {
+        "total": {
+          "instructions": [
+            {
+              "arg": "x",
+              "index": 0,
+              "op": "STORE_NAME"
+            },
+            {
+              "arg": 0,
+              "index": 1,
+              "op": "LOAD_CONST"
+            },
+            {
+              "arg": "acc",
+              "index": 2,
+              "op": "STORE_NAME"
+            },
+            {
+              "arg": "data",
+              "index": 3,
+              "op": "LOAD_NAME"
+            },
+            {
+              "arg": "item",
+              "index": 4,
+              "op": "FOR_START"
+            },
+            {
+              "arg": 11,
+              "index": 5,
+              "op": "FOR_NEXT"
+            },
+            {
+              "arg": "acc",
+              "index": 6,
+              "op": "LOAD_NAME"
+            },
+            {
+              "arg": "item",
+              "index": 7,
+              "op": "LOAD_NAME"
+            },
+            {
+              "arg": "+",
+              "index": 8,
+              "op": "BINARY_OP"
+            },
+            {
+              "arg": "acc",
+              "index": 9,
+              "op": "STORE_NAME"
+            },
+            {
+              "arg": 5,
+              "index": 10,
+              "op": "JUMP_BACK"
+            },
+            {
+              "arg": null,
+              "index": 11,
+              "op": "FOR_END"
+            },
+            {
+              "arg": "acc",
+              "index": 12,
+              "op": "LOAD_NAME"
+            },
+            {
+              "arg": 9,
+              "index": 13,
+              "op": "LOAD_CONST"
+            },
+            {
+              "arg": "%",
+              "index": 14,
+              "op": "BINARY_OP"
+            },
+            {
+              "arg": 9,
+              "index": 15,
+              "op": "LOAD_CONST"
+            },
+            {
+              "arg": "or",
+              "index": 16,
+              "op": "BINARY_OP"
+            },
+            {
+              "arg": null,
+              "index": 17,
+              "op": "RETURN"
+            }
+          ],
+          "summary": {
+            "instruction_count": 18,
+            "params": [
+              "x"
+            ],
+            "sealed": true
+          }
+        }
+      },
+      "main_instructions": [
+        {
+          "arg": [
+            9,
+            18,
+            27
+          ],
+          "index": 0,
+          "op": "LOAD_CONST"
+        },
+        {
+          "arg": "data",
+          "index": 1,
+          "op": "STORE_NAME"
+        },
+        {
+          "arg": "total",
+          "index": 2,
+          "op": "MAKE_FUNC"
+        },
+        {
+          "arg": 9,
+          "index": 3,
+          "op": "LOAD_CONST"
+        },
+        {
+          "arg": [
+            "total",
+            1
+          ],
+          "index": 4,
+          "op": "CALL_FUNC"
+        },
+        {
+          "arg": "result",
+          "index": 5,
+          "op": "STORE_NAME"
+        },
+        {
+          "arg": "result",
+          "index": 6,
+          "op": "LOAD_NAME"
+        },
+        {
+          "arg": 1,
+          "index": 7,
+          "op": "PRINT"
+        },
+        {
+          "arg": null,
+          "index": 8,
+          "op": "POP"
+        },
+        {
+          "arg": null,
+          "index": 9,
+          "op": "HALT"
+        }
+      ],
+      "success": true,
+      "target": "/mnt/data/phase15_validation_v2_pack/examples/inspect_demo.a9",
+      "verbose": false
+    }
+  }
+]

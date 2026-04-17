@@ -1,0 +1,62 @@
+{
+  "validation_version": "2",
+  "contract_focus": "aether9.artifact.v2",
+  "api_success_count": 6,
+  "cli_success_count": 4,
+  "scenario_count": 10,
+  "benchmarks": [
+    {
+      "label": "api_export_binary",
+      "repeats": 3,
+      "mean_ms": 3.9546,
+      "min_ms": 3.5526,
+      "max_ms": 4.5009
+    },
+    {
+      "label": "api_inspect_binary",
+      "repeats": 3,
+      "mean_ms": 1.5314,
+      "min_ms": 1.4075,
+      "max_ms": 1.7216
+    },
+    {
+      "label": "api_verify_file",
+      "repeats": 3,
+      "mean_ms": 1.9009,
+      "min_ms": 1.5472,
+      "max_ms": 2.2507
+    },
+    {
+      "label": "api_run_binary",
+      "repeats": 3,
+      "mean_ms": 1.4418,
+      "min_ms": 1.0426,
+      "max_ms": 1.7057
+    },
+    {
+      "label": "cli_inspect_json",
+      "repeats": 3,
+      "mean_ms": 4420.7421,
+      "min_ms": 4330.2956,
+      "max_ms": 4551.0519
+    },
+    {
+      "label": "cli_verify_json",
+      "repeats": 3,
+      "mean_ms": 4456.4185,
+      "min_ms": 4363.0726,
+      "max_ms": 4540.8425
+    },
+    {
+      "label": "cli_vm_json",
+      "repeats": 3,
+      "mean_ms": 4436.3848,
+      "min_ms": 4378.8527,
+      "max_ms": 4525.9401
+    }
+  ],
+  "artifact_size_bytes": {
+    "hello_binary": 2395,
+    "hello_json": 3997
+  }
+}

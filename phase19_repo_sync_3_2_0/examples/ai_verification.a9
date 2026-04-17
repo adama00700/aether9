@@ -1,0 +1,10 @@
+scores = [54, 36, 72, 90]
+
+lattice verify_score(x) uses scores:
+    return dr(x) or 9
+
+approved = 0
+for score in scores:
+    approved = approved + verify_score(score)
+
+print(approved)
